@@ -1,29 +1,32 @@
 <html>
     <head>
-        
+        <script type="text/javascript" src="MainPageActions.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="imgs\MainPage.css"/>
     </head>
     <body>
         <div class="mainBody">
-        <div class="container-fluid bg-dark text-white">
-            <div class="row">
-                <div class="col-md-2 border text-right">
-                    <h1>dsfdgfdgfdgdg</h1>
+            <div clas="container-fluid">
+                <div class="row bg-dark text-white" >
+                    <div class="col-md-12">
+                        <ul class="menuUl">
+                            <li class="menu"><a class="active" href="#home">Home</a></li>
+                            <li class="menu"><a href="#news">News</a></li>
+                            <li class="menu"><a href="#contact">Contact</a></li>
+                            <li class="menu"><a href="#about">About</a></li>
+                            <li id="logOut"><a href="#about">LogOut</a></li>
+                          </ul>
+                    </div>
                 </div>
+        <br>
+        <br>
+                
+            <div class="row justify-content-end" >
 
-                <div class="col-md-2 border  text-left">
-                    <h1>hey</h1>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div clas="container-fluid">
-            <div class="row justify-content-end">
-                <div class="col-md-10 text-right">
-                        <div class="row justify-content-center">
-                                <div class="col-md-2  text-center w-200">   
+                <div class="col-md-10 text-right" id="AllProducts">
+                        
+                                <div class="row justify-content-end" >
+                                <div class="col-md-4 text-center">   
                                     <div class="card h-100">
                                         <div class="card-body">
                                             <img src="imgs\products-028-2051_musicgate.co.il.jpg">
@@ -36,11 +39,11 @@
                             </div>
                             
                             
-                                <div class="col-md-2 text-center  w-200">
+                                <div class="col-md-4 text-center">
                                     <div class="card h-100">    
                                         <div class="card-body">
                                             <img src="imgs\harmonica.jpg">
-                                            <h1>חליל</h1>
+                                            <h1>מפוחית</h1>
                                             <p>מפוחית יפה</p>
                                             <p>₪ 35</p>
                                             <button type="button">הוספה לסל</button>
@@ -48,21 +51,20 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2 text-center  w-200">
+                            <div class="col-md-4 text-center ">
                                 <div class="card h-100">    
                                     <div class="card-body">
                                         <img src="imgs\trumpet.jpg">
-                                        <h1>חליל</h1>
+                                        <h1>חצוצרה</h1>
                                         <p>חצוצרה יפה</p>
                                         <p>₪ 1500</p>
                                         <button type="button">הוספה לסל</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="row justify-content-center">
-                            <div class="col-md-2 text-center  w-200">
+                        
+                        
+                            <div class="col-md-4 text-center ">
                                 <div class="card h-100">    
                                     <div class="card-body">
                                         <img src="imgs\trombon.jpg">
@@ -73,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 text-center  w-200">
+                            <div class="col-md-4 text-center">
                                 <div class="card h-100">    
                                     <div class="card-body">
                                         <img src="imgs\Clarinet.jpg">
@@ -84,45 +86,50 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 text-center  w-200">
+                            <div class="col-md-4 text-center">
                                 <div class="card h-100">    
                                     <div class="card-body">
-                                        <img src="imgs\trumpet.jpg">
-                                        <h1>חליל</h1>
-                                        <p>חצוצרה יפה</p>
-                                        <p>₪ 1500</p>
+                                        <img src="imgs\tupim.jpg">
+                                        <h1>תופים</h1>
+                                        <p>תופים טובים</p>
+                                        <p>₪ 2000</p>
                                         <button type="button">הוספה לסל</button>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-md-2 text-center  w-100">
+
+                <div class="col-md-2 text-center">
                     <h1>סינון</h1>
-                    <select name="kindMusicalInstruments" id="kindMusicalInstruments">
+                    <select name="kindMusicalInstruments" id="kindMusicalInstrumentsId" onchange="getAllProductsByType()">
                         <option selected disabled hidden>סוג כלי נגינה</option>
-                        
-                        <option value="volvo">נקישה</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
+                        <option value="all">כל המוצרים</option>
+                        <option value="knock">נקישה</option>
+                        <option value="exhalation">נשיפה</option>
+                        <option value="chord">מיתר</option>
+                        <option value="keyboard">מקלדת</option>
+
                       </select>
                       <br>
                       <br>
-                      <input type="text" id="kindMusicalInstrumentsSearch" name="kindMusicalInstrumentsSearch" placeholder="חיפוש לכי נגינה"><br><br>
+                      <input type="text" id="kindMusicalInstrumentsSearch" name="kindMusicalInstrumentsSearch" onkeydown="searchProduct()" onkeyup="searchProduct()" placeholder="חיפוש לכי נגינה"><br><br>
                       <h1>מחיר</h1>
-                      <input type="checkbox" value="first"> עד 500 שקל<br>
-                        <input type="checkbox" value="second">שקל 500 - 1000 <br>
-                        <input type="checkbox" value="third"> 1000- 1500 שקל<br>
-                        <input type="checkbox" value="furth"> 1500 - 2000 שקל<br>
-                        <input type="checkbox" value="fifth"> 2000 שקל ומעלה
+
+                        <input id="checkbox1"  type="checkbox" value="1" onclick="filterByPrice()"> עד 500 שקל<br>
+                        <input id="checkbox2"  type="checkbox" value="2" onclick="filterByPrice()">שקל 500 - 1000 <br>
+                        <input id="checkbox3"  type="checkbox" value="3" onclick="filterByPrice()"> 1000- 1500 שקל<br>
+                        <input id="checkbox4"  type="checkbox" value="4" onclick="filterByPrice()"> 1500 - 2000 שקל<br>
+                        <input id="checkbox5"  type="checkbox" value="5" onclick="filterByPrice()"> 2000 שקל ומעלה
 
                 </div>
+
+            </div>
+        
+               
+                    
             </div>
         </div>
-    </div>
-        
-        
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
